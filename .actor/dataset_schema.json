@@ -1,0 +1,77 @@
+{
+    "actorSpecification": 1,
+    "fields": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "title": "Job listing",
+        "type": "object",
+        "properties": {
+            "title": {
+                "type": "string",
+                "title": "Job title",
+                "description": "The job title as posted on the source site."
+            },
+            "company": {
+                "type": "string",
+                "title": "Company",
+                "description": "Hiring company name, or \"Not listed\" if the site didn't show one."
+            },
+            "location": {
+                "type": "string",
+                "title": "Location",
+                "description": "Job location as shown on the listing."
+            },
+            "description": {
+                "type": "string",
+                "title": "Description",
+                "description": "Snippet from the listing, if the site's search results include one. Usually \"No description\" since most search-result cards don't show a snippet."
+            },
+            "postedDate": {
+                "type": "string",
+                "title": "Posted date",
+                "description": "Relative or absolute posting date/time as shown on the listing."
+            },
+            "url": {
+                "type": "string",
+                "title": "URL",
+                "description": "Direct link to the job posting."
+            },
+            "source": {
+                "type": "string",
+                "title": "Source",
+                "description": "Which job site this listing came from, e.g. \"LinkedIn\"."
+            },
+            "keyword": {
+                "type": "string",
+                "title": "Keyword",
+                "description": "Which search keyword produced this result."
+            },
+            "scrapedAt": {
+                "type": "string",
+                "title": "Scraped at",
+                "description": "ISO 8601 timestamp of when this listing was scraped."
+            }
+        },
+        "required": ["title", "url", "source", "keyword", "scrapedAt"]
+    },
+    "views": {
+        "overview": {
+            "title": "Overview",
+            "description": "Job listings across all selected sites and keywords.",
+            "transformation": {
+                "fields": ["title", "company", "location", "postedDate", "source", "keyword", "url"]
+            },
+            "display": {
+                "component": "table",
+                "properties": {
+                    "title": { "label": "Title", "format": "text" },
+                    "company": { "label": "Company", "format": "text" },
+                    "location": { "label": "Location", "format": "text" },
+                    "postedDate": { "label": "Posted", "format": "text" },
+                    "source": { "label": "Source", "format": "text" },
+                    "keyword": { "label": "Keyword", "format": "text" },
+                    "url": { "label": "URL", "format": "link" }
+                }
+            }
+        }
+    }
+}

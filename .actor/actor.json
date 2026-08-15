@@ -1,0 +1,11 @@
+{
+	"actorSpecification": 1,
+	"name": "multi-web-sites-jobs-scraper",
+	"version": "0.0",
+	"buildTag": "latest",
+	"environmentVariables": {},
+	"output": "./output_schema.json",
+	"storages": {
+		"dataset": "./dataset_schema.json"
+	}
+}

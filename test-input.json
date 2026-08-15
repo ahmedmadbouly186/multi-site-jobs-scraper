@@ -1,0 +1,13 @@
+{
+    "websites": ["linkedin", "mycareersfuture"],
+    "keywords": [
+        "Software Engineer",
+        "Backend Developer",
+        "Frontend Developer",
+        "DevOps Engineer",
+        "Data Scientist"
+    ],
+    "location": "Singapore",
+    "maxPages": 2,
+    "useProxy": true
+}

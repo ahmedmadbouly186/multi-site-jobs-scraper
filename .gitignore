@@ -1,0 +1,16 @@
+# Dependencies
+node_modules/
+
+# macOS
+.DS_Store
+
+# Test/temp files (optional)
+*.csv
+*.log
+*jobs*.json
+# Environment
+.env
+.env.local
+
+# OS files
+Thumbs.db

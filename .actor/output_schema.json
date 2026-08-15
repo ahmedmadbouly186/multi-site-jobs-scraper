@@ -1,0 +1,19 @@
+{
+    "actorOutputSchemaVersion": 1,
+    "title": "Multi-Site Jobs Scraper output",
+    "description": "Job listings collected from the selected sites and keywords, stored in this run's default dataset.",
+    "properties": {
+        "jobListings": {
+            "title": "Job listings (JSON)",
+            "type": "string",
+            "description": "All scraped job listings from this run, as JSON.",
+            "template": "{{links.apiDefaultDatasetUrl}}/items"
+        },
+        "runDetails": {
+            "title": "Run details",
+            "type": "string",
+            "description": "View this run and its results in the Apify Console.",
+            "template": "{{links.publicRunUrl}}"
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "name": "multi-web-sites-jobs-scraper",
+    "version": "1.0.0",
+    "description": "Scrapes IT job listings from multiple job sites (LinkedIn, MyCareersFuture)",
+    "main": "src/main.js",
+    "scripts": {
+        "start": "node src/main.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": ["apify", "scraper", "linkedin", "jobs"],
+    "author": "Ahmed",
+    "license": "ISC",
+    "dependencies": {
+        "apify": "^3.1.0",
+        "cheerio": "^1.0.0-rc.12",
+        "playwright": "^1.40.0"
+    },
+    "engines": {
+        "node": ">=20.0.0"
+    }
+}

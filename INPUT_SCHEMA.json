@@ -1,0 +1,63 @@
+{
+    "title": "Multi-Site Jobs Scraper",
+    "description": "Scrapes IT job listings from multiple job sites, for any location LinkedIn supports. Pick which sites to scrape, which keywords to search, and which location to target — no coding required.",
+    "type": "object",
+    "schemaVersion": 1,
+    "properties": {
+        "websites": {
+            "type": "array",
+            "title": "Websites",
+            "description": "Which job sites to scrape. To add a new site: create a handler in src/sites/, register it in src/sites/index.js, then add its id here.",
+            "editor": "select",
+            "items": {
+                "type": "string",
+                "enum": ["linkedin", "mycareersfuture"],
+                "enumTitles": ["LinkedIn", "MyCareersFuture"]
+            },
+            "default": ["linkedin", "mycareersfuture"]
+        },
+        "keywords": {
+            "type": "array",
+            "title": "Job Title/Keywords",
+            "description": "Job titles/keywords to search for on each selected site.",
+            "editor": "stringList",
+            "default": [
+                "Software Engineer",
+                "Backend Developer",
+                "Frontend Developer",
+                "DevOps Engineer",
+                "Data Scientist"
+            ],
+            "prefill": [
+                "Software Engineer",
+                "Backend Developer",
+                "Frontend Developer",
+                "DevOps Engineer",
+                "Data Scientist"
+            ]
+        },
+        "location": {
+            "type": "string",
+            "title": "Location",
+            "description": "Job location, e.g. 'Singapore', 'Egypt', 'Remote'. Only applies to sites whose search takes a location parameter — note that MyCareersFuture only returns results for Singapore regardless of this value.",
+            "default": "Singapore",
+            "prefill": "Singapore",
+            "editor": "textfield"
+        },
+        "maxPages": {
+            "type": "integer",
+            "title": "Number of Pages",
+            "description": "How many result pages to scrape, per site, per keyword.",
+            "default": 3,
+            "minimum": 1,
+            "maximum": 20
+        },
+        "useProxy": {
+            "type": "boolean",
+            "title": "Use Apify Proxy",
+            "description": "Enable IP rotation (recommended to avoid blocks). Uses compute units but highly recommended.",
+            "default": true
+        }
+    },
+    "required": ["websites", "keywords", "location"]
+}
